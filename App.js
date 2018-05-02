@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 
 import HomeScreen from './Screens/HomeScreen'
@@ -14,7 +14,17 @@ export default class App extends React.Component {
 }
 
 const MainTabNavigator = TabNavigator({
-  HomeScreen: {screen : HomeScreen},
+
+  HomeScreen: {screen : HomeScreen,
+    navigationOptions: ({ navigation }) => ({
+      title: "Home",
+      tabBarIcon: () => (
+        <Image
+          source={require('./assets/home.png')}
+          style={{width:24, height:24}}
+        />
+      )
+    })},
   ProfileScreen: {screen : ProfileScreen},
   },
   {

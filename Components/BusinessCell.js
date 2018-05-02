@@ -11,7 +11,17 @@ class BusinessCell extends Component {
             <Card style={styles.container}>
                 <CardItem>
                     <Left>
-                        <Image source={require('../assets/company2.png')} style={{ height: 70, width: 70, borderWidth: 1, borderColor: '#ddd', borderRadius: 3} }/>
+                        <View style={{ shadowColor: '#000',
+                            shadowOffset: {width:0, height:1},
+                            shadowOpacity:0.8,
+                            shadowRadius: 1,
+                            elevation: 1}}>
+                        <Image source={require('../assets/company2.png')} style={{ 
+                            height: 70, 
+                            width: 70, 
+                            borderRadius: 3
+                             }}/>
+                        </View>
                         <Body>
                             <Text style={{ fontWeight: 0.62, fontSize: 16, paddingBottom: 3}}>{this.props.businessName}</Text>
                             <Text style={{ color: '#222', paddingRight: 0, fontSize: 13, paddingBottom: 3 }}>{this.props.businessNote}</Text>

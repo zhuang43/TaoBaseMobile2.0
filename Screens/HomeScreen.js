@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Button, TouchableOpacity, Dimensions, Image } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity, Dimensions, Image, ImageBackground } from 'react-native';
 import { Container, Content } from 'native-base'
 import { StackNavigator } from 'react-navigation';
+import Swiper from 'react-native-swiper'
 
 import HomeMenuCell from "../Components/HomeMenuCell"
 import FeaturedUserCell from '../Components/FeaturedUserCell';
@@ -13,6 +14,12 @@ import PremiumCell from '../Components/PremiumCell'
 import ProjectListScreen from './ProjectListScreen';
 import BusinessListScreen from './BusinessListScreen'
 import ProfileScreen from './ProfileScreen'
+import UserProfileScreen from './UserProfileScreen'
+import FeedScreen from './FeedScreen'
+import PartnerListScreen from './PartnerListScreen'
+import ProjectDetailScreen from './ProjectDetailScreen'
+
+
 
 class HomeScreen extends Component {
 
@@ -23,19 +30,20 @@ class HomeScreen extends Component {
         },
         headerTitleStyle: {
             color: '#fff',
-                fontSize: '18'
+            fontSize: '18'
         },
         headerLeft:
-        <TouchableOpacity style={{ alignItems: 'center' }}>
-            <View style={{ backgroundColor: '#fff', left: 10, paddingVertical: 5, width: Dimensions.get('window').width - 60 }}>
-                <Text style={{ color: '#777' }}>  Search</Text>
-            </View>
-        </TouchableOpacity> ,
-            headerRight:
-        <TouchableOpacity
-            style={{ width: 28, height: 28, right: 10, alignItems: 'center' }}
-        >
-            <Image source={require('../assets/alice.png')} style={{ height: 28, width: 28, borderWidth: 1, borderColor: '#fff', borderRadius: '14' }} />>
+            <TouchableOpacity style={{ alignItems: 'center' }} >
+                <View style={{ backgroundColor: '#fff', left: 10, paddingVertical: 5, width: Dimensions.get('window').width - 60 }}>
+                    <Text style={{ color: '#777' }}>  Search</Text>
+                </View>
+            </TouchableOpacity>,
+        headerRight:
+            <TouchableOpacity
+                style={{ width: 28, height: 28, right: 10, alignItems: 'center' }}
+                onPress={() => navigation.navigate('ProfileScreen')}
+            >
+                <Image source={require('../assets/alice.png')} style={{ height: 28, width: 28, borderWidth: 1, borderColor: '#fff', borderRadius: 14 }} />>
             </TouchableOpacity>
 
     })
@@ -45,10 +53,41 @@ class HomeScreen extends Component {
 
             <Container>
                 <Content>
-                    <FeaturedUserCell />
                     <HomeMenuCell navigation={this.props.navigation} />
+
+                    <Swiper style={{ height: 180 }} autoplay={true}>
+                        <View style={{ flex: 1 }}>
+                            <ImageBackground source={require('../assets/swiper1.jpg')} style={{ width: Dimensions.get('window').width, height: 180, flexDirection: 'column', justifyContent: 'flex-end' }} resizeMode='cover'>
+                                <View style={{
+                                    backgroundColor: 'rgbargba(1, 1, 1, 0.5)'
+                                }}>
+                                    <Text style={{
+                                        color: '#fff', fontWeight: 0.4, fontSize: 14, textAlign: 'center',
+                                    }}>
+                                        Venture Capital Unlocked:Silicon Valley Secrets for Investing in Asia</Text>
+                                </View>
+                            </ImageBackground>
+                        </View>
+                        <View style={{ flex: 1 }}>
+                            <ImageBackground source={require('../assets/swiper2.jpg')} style={{ width: Dimensions.get('window').width, height: 180, flexDirection: 'column', justifyContent: 'flex-end' }} resizeMode='cover'>
+                                <View style={{ backgroundColor: 'rgba(1, 1, 1, 0.5)' }}>
+                                    <Text style={{ color: '#fff', fontWeight: 0.4, fontSize: 14, textAlign: 'center' }}>9 U.S. Cities You Wouldn't Think Are Hubs for Tech Startups</Text>
+                                </View>
+                            </ImageBackground>
+                        </View>
+                        <View style={{ flex: 1 }}>
+                            <ImageBackground source={require('../assets/swiper3.jpg')} style={{ width: Dimensions.get('window').width, height: 180, flexDirection: 'column', justifyContent: 'flex-end' }} resizeMode='cover'>
+                                <View style={{ backgroundColor: 'rgba(1, 1, 1, 0.5)' }}>
+                                    <Text style={{ color: '#fff', fontWeight: 0.4, fontSize: 14, textAlign: 'center' }}>From Silicon Valley in California to Silicon Alley in New York</Text>
+                                </View>
+                            </ImageBackground>
+                        </View>
+                    </Swiper>
+                    <FeaturedUserCell navigation={this.props.navigation} />
+
                     <Text style={{ color: '#777' }}> Projects of the week</Text>
-                    <ProjectCell
+                    <ProjectCell 
+                        navigation={this.props.navigation}
                         projectName='RealCrowd'
                         projectNote='RealCrowd is breaking down the barriers to real estate investing by providing a syndication platform'
                         projectLocation='Palo Alto, CA, USA'
@@ -120,7 +159,11 @@ const HomeNavigator = StackNavigator({
     HomeScreen: { screen: HomeScreen },
     ProjectListScreen: { screen: ProjectListScreen },
     BusinessListScreen: { screen: BusinessListScreen },
-    ProfileScreen: { screen: ProfileScreen }
+    ProfileScreen: { screen: ProfileScreen },
+    UserProfileScreen: { screen: UserProfileScreen },
+    FeedScreen: { screen: FeedScreen },
+    PartnerListScreen: { screen: PartnerListScreen },
+    ProjectDetailScreen: { screen: ProjectDetailScreen }
 })
 
 

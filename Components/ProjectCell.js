@@ -9,23 +9,25 @@ class ProjectCell extends Component {
     render() {
         return (
             <Card style={styles.container}>
-                <CardItem>
-                    <Left>
-                        <Image source={require('../assets/company1.png')} style={{ height: 70, width: 70 }} />
-                        <Body>
-                            <Text style={{ fontWeight: 0.62, fontSize: 16, paddingBottom: 3 }}>{this.props.projectName}</Text>
-                            <Text style={{ color: '#222', paddingRight: 0, fontSize: 13, paddingBottom: 3 }}>{this.props.projectNote}</Text>
-                            <View style={{ flexDirection: 'row', alignItems: 'center', opacity:0.7, paddingTop: 5 }}>
-                                <Image source={require('../assets/map-pin.png')} style={{ height: 13, width: 11 }} />
-                                <Text style={{ paddingLeft: 5, fontSize: 13 }}>{this.props.projectLocation}</Text>
-                            </View>
-                            <View style={{ flexDirection: 'row', alignItems: 'center', paddingTop: 3, opacity:0.7 }}>
-                                <Image source={require('../assets/crosshair.png')} style={{ height: 11, width: 11 }} />
-                                <Text style={{ paddingLeft: 5, fontSize: 13 }}>{this.props.projectField}</Text>
-                            </View>
-                        </Body>
-                    </Left>
-                </CardItem>
+                <TouchableOpacity onPress={()=>this.props.navigation.navigate('ProjectDetailScreen')}>
+                    <CardItem>
+                        <Left>
+                            <Image source={require('../assets/company1.png')} style={{ height: 70, width: 70 }} />
+                            <Body>
+                                <Text style={{ fontWeight: 0.62, fontSize: 16, paddingBottom: 3 }}>{this.props.projectName}</Text>
+                                <Text style={{ color: '#222', paddingRight: 0, fontSize: 13, paddingBottom: 3 }}>{this.props.projectNote}</Text>
+                                <View style={{ flexDirection: 'row', alignItems: 'center', opacity: 0.7, paddingTop: 5 }}>
+                                    <Image source={require('../assets/map-pin.png')} style={{ height: 13, width: 11 }} />
+                                    <Text style={{ paddingLeft: 5, fontSize: 13 }}>{this.props.projectLocation}</Text>
+                                </View>
+                                <View style={{ flexDirection: 'row', alignItems: 'center', paddingTop: 3, opacity: 0.7 }}>
+                                    <Image source={require('../assets/crosshair.png')} style={{ height: 11, width: 11 }} />
+                                    <Text style={{ paddingLeft: 5, fontSize: 13 }}>{this.props.projectField}</Text>
+                                </View>
+                            </Body>
+                        </Left>
+                    </CardItem>
+                </TouchableOpacity>
 
                 <CardItem style={{ borderTopColor: '#ccc', borderTopWidth: 0.5, justifyContent: 'space-between' }}>
                     <View style={{ paddingLeft: Dimensions.get('window').width / 11 }}>

@@ -6,7 +6,7 @@ import { StackNavigator, TabNavigator } from 'react-navigation';
 import ExperienceListItem from '../Components/ExperienceListItem'
 import EducationListItem from '../Components/EducationListItem'
 
-class ProfileScreen extends Component {
+class UserProfileScreen extends Component {
 
     static navigationOptions = {
         headerStyle: {
@@ -23,29 +23,25 @@ class ProfileScreen extends Component {
                         <Text style={{ color: '#777' }}>  Search</Text>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={{ paddingRight: 10 }}>
-                    <Image source={require('../assets/settings.png')} style={{ width: 21, height: 21 }} />
+                <TouchableOpacity
+                    style={{ width: 28, height: 28, right: 10, alignItems: 'center' }}
+                    onPress={() => navigation.navigate('ProfileScreen')}
+                >
+                    <Image source={require('../assets/alice.png')} style={{ height: 28, width: 28, borderWidth: 1, borderColor: '#fff', borderRadius: 14 }} />
                 </TouchableOpacity>
             </View>,
         headerTintColor: 'white',
-
-
     }
     render() {
         return (
             <Container>
                 <Content>
-                    <Card style={{ backgroundColor: '#fff', height: 200, paddingHorizontal: 10 }}>
-                        <CardItem style={{ flexDirection: 'row', justifyContent: 'flex-end', paddingHorizontal: 10, opacity: 0.8 }}>
-                            <TouchableOpacity>
-                                <Image source={require('../assets/edit.png')} style={{ width: 16, height: 16 }} />
-                            </TouchableOpacity>
-                        </CardItem>
-                        <View style={{ top: -20, alignItems: 'center' }}>
-                            <Image source={require('../assets/alice.png')} style={{ width: 80, height: 80 }} />
-                            <Text style={{ top: 5, fontWeight: 0.4, fontSize: 18 }}>Alexander Mcqueen</Text>
+                    <Card style={{ backgroundColor: '#fff', height: 220 }}>
+                        <View style={{ alignItems: 'center', paddingHorizontal: 10 }}>
+                            <Image source={require('../assets/allen.png')} style={{ width: 80, height: 80 }} />
+                            <Text style={{ top: 5, fontWeight: 0.4, fontSize: 18 }}>Barry Allen</Text>
                             <Text style={{ top: 5, fontWeight: 0.23, fontSize: 14, textAlign: 'center', height: 40, opacity: 0.9 }}>Chief designer at Givenchy from 1996 to 2001 and founded his own Alexander McQueen label</Text>
-                            <View style={{ flexDirection: 'row', paddingHorizontal:10, flexWrap:'wrap', justifyContent:'center'}}>
+                            <View style={{ flexDirection: 'row', paddingHorizontal: 10, flexWrap: 'wrap', justifyContent: 'center' }}>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', opacity: 0.7 }}>
                                     <Image source={require('../assets/map-pin.png')} style={{ height: 13, width: 11 }} />
                                     <Text style={{ paddingLeft: 5, fontSize: 13 }}>San Francisco, CA</Text>
@@ -58,6 +54,18 @@ class ProfileScreen extends Component {
                                     <Image source={require('../assets/clock.png')} style={{ height: 11, width: 11 }} />
                                     <Text style={{ paddingLeft: 5, fontSize: 13 }}>10-15 years</Text>
                                 </View>
+
+                            </View>
+                            <View style={{flexDirection: 'row', justifyContent: 'center', paddingTop:8}}>
+                                <View style={{ flexDirection: 'row' }}>
+                                    <TouchableOpacity style={{ borderColor: '#E14437', borderWidth: 1, borderRadius: 3, width: 80, alignItems: 'center', paddingVertical: 3, right: 5 }}>
+                                        <Text style={{ color: '#E14437', fontWeight: 0.4, fontSize: 13 }}>Follow</Text>
+                                    </TouchableOpacity>
+                                    >
+                                    <TouchableOpacity style={{ borderColor: '#E14437', borderWidth: 1, borderRadius: 3, width: 80, alignItems: 'center', paddingVertical: 3 }}>
+                                        <Text style={{ color: '#E14437', fontWeight: 0.4, fontSize: 13 }}>Message</Text>
+                                    </TouchableOpacity>
+                                </View>
                             </View>
                         </View>
                     </Card>
@@ -66,20 +74,18 @@ class ProfileScreen extends Component {
 
 
                     <Card style={{ backgroundColor: '#fff', borderTopColor: '#eee', borderTopWidth: 1 }}>
-                        <CardItem style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 10, opacity: 0.8 }}>
+                        <CardItem style={{ flexDirection: 'row', justifyContent: 'flex-start', paddingHorizontal: 10, opacity: 0.8 }}>
                             <Text style={{ fontWeight: 0.3 }}>Experience</Text>
-                            <TouchableOpacity>
-                                <Image source={require('../assets/edit.png')} style={{ width: 16, height: 16 }} />
-                            </TouchableOpacity>
+
                         </CardItem>
                         <ExperienceListItem
-                            ExperienceTitle="Product manager"
-                            ExperienceCompany="ソフトバンク（SoftBank)"
+                            ExperienceTitle="Store manager"
+                            ExperienceCompany="BMW stevens creek"
                             ExperiencePeriod="Sep 2015 - Present"
                         />
                         <ExperienceListItem
-                            ExperienceTitle="Senior Software Developer"
-                            ExperienceCompany="Facebook"
+                            ExperienceTitle="Cashier"
+                            ExperienceCompany="CVS Pharmacy"
                             ExperiencePeriod="Sep 2010 - June 2015"
                         />
                     </Card>
@@ -87,11 +93,8 @@ class ProfileScreen extends Component {
 
 
                     <Card style={{ backgroundColor: '#fff', borderTopColor: '#eee', borderTopWidth: 1 }}>
-                        <CardItem style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 10, opacity: 0.8 }}>
+                        <CardItem style={{ flexDirection: 'row', justifyContent: 'flex-start', paddingHorizontal: 10, opacity: 0.8 }}>
                             <Text style={{ fontWeight: 0.3 }}>Education</Text>
-                            <TouchableOpacity>
-                                <Image source={require('../assets/edit.png')} style={{ width: 16, height: 16 }} />
-                            </TouchableOpacity>
                         </CardItem>
                         <EducationListItem
                             EducationName="University of California, Santa Cruz"
@@ -105,25 +108,19 @@ class ProfileScreen extends Component {
                         />
                     </Card>
                     <Card>
-                        <CardItem style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 10, opacity: 0.8 }}>
+                        <CardItem style={{ flexDirection: 'row', justifyContent: 'flex-start', paddingHorizontal: 10, opacity: 0.8 }}>
                             <Text style={{ fontWeight: 0.3 }}>Skill</Text>
-                            <TouchableOpacity>
-                                <Image source={require('../assets/edit.png')} style={{ width: 16, height: 16 }} />
-                            </TouchableOpacity>
                         </CardItem>
 
                         <List>
                             <ListItem>
-                                <Text>Java</Text>
+                                <Text>Excel</Text>
                             </ListItem>
                             <ListItem>
-                                <Text>React-native</Text>
+                                <Text>Word</Text>
                             </ListItem>
                             <ListItem>
-                                <Text>Swift</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text>Data Analysis</Text>
+                                <Text>MBA</Text>
                             </ListItem>
                         </List>
                     </Card>
@@ -132,11 +129,8 @@ class ProfileScreen extends Component {
 
 
                     <Card style={{ backgroundColor: '#fff', borderTopColor: '#eee', borderTopWidth: 1 }}>
-                        <CardItem style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 10, opacity: 0.8 }}>
+                        <CardItem style={{ flexDirection: 'row', justifyContent: 'flex-start', paddingHorizontal: 10, opacity: 0.8 }}>
                             <Text style={{ fontWeight: 0.3 }}>Activity</Text>
-                            <TouchableOpacity>
-                                <Image source={require('../assets/edit.png')} style={{ width: 16, height: 16 }} />
-                            </TouchableOpacity>
                         </CardItem>
                         <List>
                             <ListItem>
@@ -167,11 +161,8 @@ class ProfileScreen extends Component {
                     </Card>
 
                     <Card style={{ backgroundColor: '#fff', borderTopColor: '#eee', borderTopWidth: 1 }}>
-                        <CardItem style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 10, opacity: 0.8 }}>
+                        <CardItem style={{ flexDirection: 'row', justifyContent: 'flex-start', paddingHorizontal: 10, opacity: 0.8 }}>
                             <Text style={{ fontWeight: 0.3 }}>Social Media</Text>
-                            <TouchableOpacity>
-                                <Image source={require('../assets/edit.png')} style={{ width: 16, height: 16 }} />
-                            </TouchableOpacity>
                         </CardItem>
                         <List>
                             <ListItem>
@@ -215,4 +206,4 @@ class ProfileScreen extends Component {
         );
     }
 }
-export default ProfileScreen;
+export default UserProfileScreen;

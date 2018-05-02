@@ -9,7 +9,7 @@ class PremiumCell extends Component {
         return (
             
             <Card style={{ flexDirection: 'column', justifyContent: 'space-between'}}>
-                <CardItem styles={{ felx: 1, height: 90, paddingTop: 20 }}>
+                <CardItem style={{ felx: 1}}>
                     <TouchableOpacity ><Text style={{fontWeight:0.56, color: '#EEAA2C', fontSize: '16'}}>Premiums</Text></TouchableOpacity>
                     <Text> have free business referral services!</Text>
                 </CardItem>
