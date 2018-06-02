@@ -6,7 +6,7 @@ import { StackNavigator, TabNavigator } from 'react-navigation';
 import ExperienceListItem from '../Components/ExperienceListItem'
 import EducationListItem from '../Components/EducationListItem'
 
-class ProjectDetailScreen extends Component {
+class BusinessDetailScreen extends Component {
 
     static navigationOptions = {
         headerStyle: {
@@ -38,22 +38,11 @@ class ProjectDetailScreen extends Component {
                 <Content>
                     <Card style={{ backgroundColor: '#fff' }}>
                         <View style={{ alignItems: 'center', paddingHorizontal: 10, paddingTop: 10 }}>
-                            <Image source={require('../assets/company1.png')} style={{ width: 80, height: 80 }} />
-                            <Text style={{ top: 5, fontWeight: 0.4, fontSize: 18 }}>Real Crowd</Text>
-                            <Text style={{ top: 5, fontWeight: 0.23, fontSize: 14, textAlign: 'center', height: 40, opacity: 0.9 }}>We provide a centralized monitoring platform for public and private cloud management (SaaS) and apps, allowing customers to view all server alerts in a single console.</Text>
+                            <Image source={require('../assets/company2.png')} style={{ width: 80, height: 80 }} />
+                            <Text style={{ top: 5, fontWeight: 0.4, fontSize: 18 }}>Spain Tech Center</Text>
+                            <Text style={{ top: 5, fontWeight: 0.23, fontSize: 14, textAlign: 'center', height: 40, opacity: 0.9 }}>Specializing in WordPress Website Development, WordPress Consulting, WordPress Training, Social Media Training, Graphic Design, SEO, SEM and much more.</Text>
                             <View style={{ flexDirection: 'row', paddingHorizontal: 10, flexWrap: 'wrap', justifyContent: 'center' }}>
-                                <View style={{ flexDirection: 'row', alignItems: 'center', opacity: 0.7 }}>
-                                    <Image source={require('../assets/map-pin.png')} style={{ height: 13, width: 11 }} />
-                                    <Text style={{ paddingLeft: 5, fontSize: 13 }}>San Francisco, CA</Text>
-                                </View >
-                                <View style={{ flexDirection: 'row', alignItems: 'center', opacity: 0.7, paddingLeft: 8 }}>
-                                    <Image source={require('../assets/crosshair.png')} style={{ height: 11, width: 11 }} />
-                                    <Text style={{ paddingLeft: 5, fontSize: 13 }}>Science/-Technology, Cloud-Computing</Text>
-                                </View>
-                                <View style={{ flexDirection: 'row', alignItems: 'center', opacity: 0.7, paddingLeft: 8 }}>
-                                    <Image source={require('../assets/clock.png')} style={{ height: 11, width: 11 }} />
-                                    <Text style={{ paddingLeft: 5, fontSize: 13 }}>Research & Development</Text>
-                                </View>
+                              
 
                             </View>
                             <View style={{ flexDirection: 'row', justifyContent: 'center', paddingTop: 8, paddingBottom: 10 }}>
@@ -94,69 +83,31 @@ class ProjectDetailScreen extends Component {
                     </Card>
 
 
-                    <Card style={{ backgroundColor: '#fff', borderTopColor: '#eee', borderTopWidth: 1 }}>
-                        <CardItem style={{ flexDirection: 'row', justifyContent: 'flex-start', paddingHorizontal: 10, opacity: 0.9, borderLeftColor: '#b2d6ca', borderLeftWidth: 2 }}>
-                            <Text style={{ fontWeight: 0.3 }}>Keywords</Text>
-
-                        </CardItem>
-                        <List>
-                            <ListItem>
-                                <Text>Cloud Computing</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text>Cloud Managment</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text>Cloud Infrastructure</Text>
-                            </ListItem>
-                        </List>
-                    </Card>
-
-
 
                     <Card style={{ backgroundColor: '#fff', borderTopColor: '#eee', borderTopWidth: 1 }}>
                         <CardItem style={{ flexDirection: 'row', justifyContent: 'flex-start', paddingHorizontal: 10, opacity: 0.8, borderLeftColor: '#edbc7a', borderLeftWidth: 2 }}>
-                            <Text style={{ fontWeight: 0.3 }}>Funding</Text>
+                            <Text style={{ fontWeight: 0.3 }}>Overview</Text>
                         </CardItem>
                         <List>
                             <ListItem>
-                                <Text style={{ color: '#333' }}>Fund source:</Text><Text>Venture Capital(A / First round)</Text>
+                                <Text style={{ color: '#333' }}>Business Type:</Text><Text>Other</Text>
                             </ListItem>
                             <ListItem>
-                                <Text style={{ color: '#333' }}>Current round:</Text><Text>$505,000</Text>
+                                <Text style={{ color: '#333' }}>Location:</Text><Text>Fort Lauderdale, FL, USA</Text>
                             </ListItem>
                             <ListItem>
-                                <Text style={{ color: '#333' }}>First round:</Text><Text>$505,000</Text>
+                                <Text style={{ color: '#333' }}>Established:</Text><Text>2005</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Text style={{ color: '#333' }}>No. of Employees:</Text><Text>5-10</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Text style={{ color: '#333' }}>Income:</Text><Text>≤1 million/year</Text>
                             </ListItem>
                         </List>
                     </Card>
 
-                    <Card style={{ backgroundColor: '#fff', borderTopColor: '#eee', borderTopWidth: 1 }}>
-                        <CardItem style={{ flexDirection: 'row', justifyContent: 'flex-start', paddingHorizontal: 10, opacity: 0.8, borderLeftColor: '#0384db', borderLeftWidth: 2 }}>
-                            <Text style={{ fontWeight: 0.3 }}>Team</Text>
-                        </CardItem>
-                        <List>
-                            <ListItem>
-                                <Text style={{ color: '#333' }}>Founders:</Text><Text>Dario Peña</Text>
-                            </ListItem>
-
-                        </List>
-                    </Card>
-
-                    <Card style={{ backgroundColor: '#fff', borderTopColor: '#eee', borderTopWidth: 1 }}>
-                        <CardItem style={{ flexDirection: 'row', justifyContent: 'flex-start', paddingHorizontal: 10, opacity: 0.8, borderLeftColor: '#db5a9a', borderLeftWidth: 2 }}>
-                            <Text style={{ fontWeight: 0.3 }}>Investors</Text>
-                        </CardItem>
-                        <List>
-                            <ListItem>
-                                <Text style={{ color: '#333' }}>Investors1:</Text><Text>500 Startups</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text style={{ color: '#333' }}>Investors2:</Text><Text>Escala.vc</Text>
-                            </ListItem>
-                        </List>
-                    </Card>
-
+  
 
 
                     <Card style={{ backgroundColor: '#fff', borderTopColor: '#eee', borderTopWidth: 1 }}>
@@ -256,4 +207,4 @@ class ProjectDetailScreen extends Component {
         );
     }
 }
-export default ProjectDetailScreen;
+export default BusinessDetailScreen;

@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 
 import HomeScreen from './Screens/HomeScreen'
-import ProfileScreen from './Screens/ProfileScreen'
+import TestScreen from './Screens/TestScreen'
 
 export default class App extends React.Component {
   render() {
@@ -25,7 +25,7 @@ const MainTabNavigator = TabNavigator({
         />
       )
     })},
-  ProfileScreen: {screen : ProfileScreen},
+  TestScreen : {screen : TestScreen},
   },
   {
     animationEnabled: true,

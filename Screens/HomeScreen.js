@@ -18,7 +18,8 @@ import UserProfileScreen from './UserProfileScreen'
 import FeedScreen from './FeedScreen'
 import PartnerListScreen from './PartnerListScreen'
 import ProjectDetailScreen from './ProjectDetailScreen'
-
+import BusinessDetailScreen from './BusinessDetailScreen'
+import FeedDetailScreen from './FeedDetailScreen'
 
 
 class HomeScreen extends Component {
@@ -53,8 +54,6 @@ class HomeScreen extends Component {
 
             <Container>
                 <Content>
-                    <HomeMenuCell navigation={this.props.navigation} />
-
                     <Swiper style={{ height: 180 }} autoplay={true}>
                         <View style={{ flex: 1 }}>
                             <ImageBackground source={require('../assets/swiper1.jpg')} style={{ width: Dimensions.get('window').width, height: 180, flexDirection: 'column', justifyContent: 'flex-end' }} resizeMode='cover'>
@@ -83,10 +82,15 @@ class HomeScreen extends Component {
                             </ImageBackground>
                         </View>
                     </Swiper>
+                    <HomeMenuCell navigation={this.props.navigation} />
                     <FeaturedUserCell navigation={this.props.navigation} />
 
+
+
+
+
                     <Text style={{ color: '#777' }}> Projects of the week</Text>
-                    <ProjectCell 
+                    <ProjectCell
                         navigation={this.props.navigation}
                         projectName='RealCrowd'
                         projectNote='RealCrowd is breaking down the barriers to real estate investing by providing a syndication platform'
@@ -105,6 +109,7 @@ class HomeScreen extends Component {
                     />
                     <Text style={{ color: '#777' }}> Our choice of Business</Text>
                     <BusinessCell
+                        navigation={this.props.navigation}
                         businessName='Spain Tech Center'
                         businessNote='Spain Tech Center is a public, non-profit initiative that facilitates the successful landing of Spanish technology companies in Silicon Valley and the US. Since our founding in 2011, we have helped over 700'
                         businessType='Investor / Incubator'
@@ -163,7 +168,9 @@ const HomeNavigator = StackNavigator({
     UserProfileScreen: { screen: UserProfileScreen },
     FeedScreen: { screen: FeedScreen },
     PartnerListScreen: { screen: PartnerListScreen },
-    ProjectDetailScreen: { screen: ProjectDetailScreen }
+    ProjectDetailScreen: { screen: ProjectDetailScreen },
+    BusinessDetailScreen: { screen: BusinessDetailScreen },
+    FeedDetailScreen: { screen: FeedDetailScreen}
 })
 
 

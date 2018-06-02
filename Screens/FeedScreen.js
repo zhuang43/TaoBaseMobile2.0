@@ -7,6 +7,8 @@ import BusinessCell from '../Components/BusinessCell'
 import PremiumCell from '../Components/PremiumCell'
 import FeedCell from '../Components/FeedCell'
 
+import FeedDetailScreen from '../Screens/FeedDetailScreen'
+
 class FeedScreen extends Component {
 
 
@@ -38,10 +40,11 @@ class FeedScreen extends Component {
         return (
             <Container>
                 <Content>
-                <FeedCell
-                        feeder='Siri Helper'
-                        feederNote='Strategic Planning at EBizTie, Inc'
-                        feedContent='Compensation at a startup is largely made up of three components: salary, benefits, and equity. What you need to know before you negotiate an offer: http://ga.co/2G40Fue'
+                    <FeedCell
+                        navigation={this.props.navigation}
+                        feeder='Fruity'
+                        feederNote='Technology-Other'
+                        feedContent='2018 Miss Fashion Travel Beauty Pageant Sponsorship. 星宇传媒现诚征赞助商，是一个很好的提高贵公司知名度的好时机。 详情请见2018时尚旅游小姐选美赞助方案 https://www.taobase.com/ui/projects/291'
                         feedReposts='9952'
                         feedComments='45723'
                         feedLikes='1053425'

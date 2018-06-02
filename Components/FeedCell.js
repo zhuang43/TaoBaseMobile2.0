@@ -7,7 +7,8 @@ class FeedCell extends Component {
 
     render() {
         return (
-            <Card style={styles.container}>
+            <Card style={styles.container}>\
+                <TouchableOpacity onPress={()=>this.props.navigation.navigate('FeedDetailScreen')}>
                 <CardItem>
                     <Left>
                         <Image source={require('../assets/allen.png')} style={{ height: 40, width: 40, borderRadius: 20}} />
@@ -17,9 +18,11 @@ class FeedCell extends Component {
                         </Body>
                     </Left>
                 </CardItem>
+                
                 <Body>
                     <Text style={{ paddingLeft: 10, paddingRight: 10, paddingBottom: 10, top: -6 }}>{this.props.feedContent}</Text>
                 </Body>
+                </TouchableOpacity>
                 <CardItem style={{ borderTopColor: '#ccc', borderTopWidth: 0.5, justifyContent: 'space-between' }}>
                     <View>
                         <TouchableOpacity style={styles.subCarItem}>
