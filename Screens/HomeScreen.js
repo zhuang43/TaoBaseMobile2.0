@@ -25,6 +25,40 @@ import FeedDetailScreen from './FeedDetailScreen'
 class HomeScreen extends Component {
 
 
+
+    componentWillMount() {
+        this.login();
+    }
+
+    login = async () => {
+        const body = {
+            username: "zhuang43@ucsc.edu",
+            password: "1010376881Ss!"
+        }
+        fetch("https://www.taobase.com/login/mobilelogin", {
+            method: 'post',
+            body: JSON.stringify(body),
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        }).then(
+            (res) => {
+                return res.json();
+            }).then((data) => {
+                if (data.code === 5) {
+                    console.log("login success");
+                } else if (data.code === 1) {
+                    console.log("fail");
+                } else if (data.code === 2) {
+                    console.log("not activate");
+                }
+            }).catch((error) => {
+                console.error(error);
+            }
+            )
+    }
+
     static navigationOptions = ({ navigation }) => ({
         headerStyle: {
             backgroundColor: '#E14437',
@@ -54,34 +88,7 @@ class HomeScreen extends Component {
 
             <Container>
                 <Content>
-                    <Swiper style={{ height: 180 }} autoplay={true}>
-                        <View style={{ flex: 1 }}>
-                            <ImageBackground source={require('../assets/swiper1.jpg')} style={{ width: Dimensions.get('window').width, height: 180, flexDirection: 'column', justifyContent: 'flex-end' }} resizeMode='cover'>
-                                <View style={{
-                                    backgroundColor: 'rgbargba(1, 1, 1, 0.5)'
-                                }}>
-                                    <Text style={{
-                                        color: '#fff', fontWeight: 0.4, fontSize: 14, textAlign: 'center',
-                                    }}>
-                                        Venture Capital Unlocked:Silicon Valley Secrets for Investing in Asia</Text>
-                                </View>
-                            </ImageBackground>
-                        </View>
-                        <View style={{ flex: 1 }}>
-                            <ImageBackground source={require('../assets/swiper2.jpg')} style={{ width: Dimensions.get('window').width, height: 180, flexDirection: 'column', justifyContent: 'flex-end' }} resizeMode='cover'>
-                                <View style={{ backgroundColor: 'rgba(1, 1, 1, 0.5)' }}>
-                                    <Text style={{ color: '#fff', fontWeight: 0.4, fontSize: 14, textAlign: 'center' }}>9 U.S. Cities You Wouldn't Think Are Hubs for Tech Startups</Text>
-                                </View>
-                            </ImageBackground>
-                        </View>
-                        <View style={{ flex: 1 }}>
-                            <ImageBackground source={require('../assets/swiper3.jpg')} style={{ width: Dimensions.get('window').width, height: 180, flexDirection: 'column', justifyContent: 'flex-end' }} resizeMode='cover'>
-                                <View style={{ backgroundColor: 'rgba(1, 1, 1, 0.5)' }}>
-                                    <Text style={{ color: '#fff', fontWeight: 0.4, fontSize: 14, textAlign: 'center' }}>From Silicon Valley in California to Silicon Alley in New York</Text>
-                                </View>
-                            </ImageBackground>
-                        </View>
-                    </Swiper>
+
                     <HomeMenuCell navigation={this.props.navigation} />
                     <FeaturedUserCell navigation={this.props.navigation} />
 
@@ -170,7 +177,7 @@ const HomeNavigator = StackNavigator({
     PartnerListScreen: { screen: PartnerListScreen },
     ProjectDetailScreen: { screen: ProjectDetailScreen },
     BusinessDetailScreen: { screen: BusinessDetailScreen },
-    FeedDetailScreen: { screen: FeedDetailScreen}
+    FeedDetailScreen: { screen: FeedDetailScreen }
 })
 
 
