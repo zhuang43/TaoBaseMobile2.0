@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import { Card, CardItem, Thumbnail, Body, Left, Right, Button, Icon, Container, Content } from 'native-base'
-
 import CommentCell from '../Components/ComentCell'
 class BusinessCell extends Component {
 
     render() {
         return (
             <Card style={styles.container}>
-                <TouchableOpacity onPress={()=>this.props.navigation.navigate('BusinessDetailScreen')}>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('BusinessDetailScreen')}>
                     <CardItem>
                         <Left>
                             <View style={{
@@ -26,7 +25,7 @@ class BusinessCell extends Component {
                                 }} />
                             </View>
                             <Body>
-                                <Text style={{ fontWeight: 0.62, fontSize: 16, paddingBottom: 3 }}>{this.props.businessName}</Text>
+                                <Text style={{ fontSize: 16, paddingBottom: 3 }}>{this.props.businessName}</Text>
                                 <Text style={{ color: '#222', paddingRight: 0, fontSize: 13, paddingBottom: 3 }}>{this.props.businessNote}</Text>
                                 <View style={styles.subCardItem}>
                                     <Image source={require('../assets/home.png')} style={{ height: 12, width: 11 }} />
@@ -53,17 +52,20 @@ class BusinessCell extends Component {
                     </CardItem>
                 </TouchableOpacity>
 
-                <CommentCell/>
+                {/* <CommentCell /> */}
             </Card>
         );
     }
 }
 
+
+//========================
+// width Can not be Null!
 const styles = StyleSheet.create({
     container: {
         flex: 10,
         borderRadius: 4,
-        width: null,
+        width: '100%'
     },
     likeBar: {
         justifyContent: 'space-between',

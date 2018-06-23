@@ -13,16 +13,16 @@ class FeaturedUserCell extends Component {
         return (
             <Card>
                 <View>
-                    <View style={{ paddingTop: 5, paddingBottom:5, justifyContent: 'space-between', flex: 1, flexDirection: 'row', alignItems: 'center', marginHorizontal: 12 }}>
+                    <View style={{ paddingTop: 5, paddingBottom: 5, justifyContent: 'space-between', flex: 1, flexDirection: 'row', alignItems: 'center', marginHorizontal: 12 }}>
                         <Text>Featured Stars</Text>
-                        <TouchableOpacity onPress={()=>this.props.navigation.navigate('PartnerListScreen')}>
-                            <Text style={{fontWeight: 0.4}}>View All</Text>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('PartnerListScreen')}>
+                            <Text>View All</Text>
                         </TouchableOpacity>
                     </View>
-                    <View style={{ flex: 3, flexDirection: 'row', paddingBottom: 10}}>
+                    <View style={{ flex: 3, flexDirection: 'row', paddingBottom: 10 }}>
                         <ScrollView horizontal={true} contentContainerStyle={{ alignItems: 'center', marginHorizontal: 12 }}>
-                            <TouchableOpacity style={{ paddingRight: 20 }} onPress={()=>this.props.navigation.navigate('UserProfileScreen')}>
-                                <Image source={require('../assets/allen.png')}  style={{ height: 60, width: 60 }} />
+                            <TouchableOpacity style={{ paddingRight: 20 }} onPress={() => this.props.navigation.navigate('UserProfileScreen')}>
+                                <Image source={require('../assets/allen.png')} style={{ height: 60, width: 60 }} />
                             </TouchableOpacity >
                             <TouchableOpacity style={{ paddingRight: 20 }}>
                                 <Image source={require('../assets/allen.png')} style={{ height: 60, width: 60 }} />
@@ -30,16 +30,16 @@ class FeaturedUserCell extends Component {
                             <TouchableOpacity style={{ paddingRight: 20 }}>
                                 <Image source={require('../assets/allen.png')} style={{ height: 60, width: 60 }} />
                             </TouchableOpacity>
-                            <TouchableOpacity style={{paddingRight: 20}}>
+                            <TouchableOpacity style={{ paddingRight: 20 }}>
                                 <Image source={require('../assets/allen.png')} style={{ height: 60, width: 60 }} />
                             </TouchableOpacity>
-                            <TouchableOpacity style={{paddingRight: 20}}>
+                            <TouchableOpacity style={{ paddingRight: 20 }}>
                                 <Image source={require('../assets/allen.png')} style={{ height: 60, width: 60 }} />
                             </TouchableOpacity>
-                            <TouchableOpacity style={{paddingRight: 20}}>
+                            <TouchableOpacity style={{ paddingRight: 20 }}>
                                 <Image source={require('../assets/allen.png')} style={{ height: 60, width: 60 }} />
                             </TouchableOpacity>
-                            <TouchableOpacity style={{paddingRight: 20}}>
+                            <TouchableOpacity style={{ paddingRight: 20 }}>
                                 <Image source={require('../assets/allen.png')} style={{ height: 60, width: 60 }} />
                             </TouchableOpacity>
                             <TouchableOpacity>
@@ -58,11 +58,10 @@ const styles = StyleSheet.create({
         flex: 10,
         borderRadius: 4,
         height: 96,
-        width: null,
         alignItems: 'center',
     },
     CardView: {
-        
+
     }
 })
 

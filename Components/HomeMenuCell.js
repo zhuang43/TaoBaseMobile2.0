@@ -12,29 +12,29 @@ class HomeMenuCell extends Component {
 
     render() {
         return (
-            
-            <Card style={{ flexDirection: 'column', justifyContent: 'space-between', borderRadius: 0}}>
-                <CardItem style={{ felx: 1}}>
+
+            <Card style={{ flexDirection: 'column', justifyContent: 'space-between', borderRadius: 0 }}>
+                <CardItem style={{ flex: 1 }}>
                     <Left style={{ justifyContent: 'space-between', marginHorizontal: -35, marginVertical: -5 }}>
                         <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
-                            <TouchableOpacity onPress={()=>this.props.navigation.navigate('FeedScreen')}>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('FeedScreen')}>
                                 <Image source={require('../assets/topic.png')} style={{ height: 45, width: 45 }} />
                             </TouchableOpacity>
-                            <Text style={{fontSize: 13}}> Hot Feeds</Text>
-                        </View>
-
-                         <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
-                            <TouchableOpacity onPress={()=>this.props.navigation.navigate('ProjectListScreen')}>
-                                <Image source={require('../assets/search.png')} style={{ height: 45, width:45 }} />
-                            </TouchableOpacity>
-                            <Text style={{fontSize: 13}}>Find Projects</Text>
+                            <Text style={{ fontSize: 13 }}> Hot Feeds</Text>
                         </View>
 
                         <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
-                            <TouchableOpacity transparent onPress={()=>this.props.navigation.navigate('BusinessListScreen')}>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('ProjectListScreen')}>
+                                <Image source={require('../assets/search.png')} style={{ height: 45, width: 45 }} />
+                            </TouchableOpacity>
+                            <Text style={{ fontSize: 13 }}>Find Projects</Text>
+                        </View>
+
+                        <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+                            <TouchableOpacity transparent onPress={() => this.props.navigation.navigate('BusinessListScreen')}>
                                 <Image source={require('../assets/cloud.png')} style={{ height: 45, width: 45 }} />
                             </TouchableOpacity>
-                            <Text style={{fontSize: 13}}>Find Business</Text>
+                            <Text style={{ fontSize: 13 }}>Find Business</Text>
                         </View>
 
                     </Left>
@@ -50,12 +50,13 @@ class HomeMenuCell extends Component {
 <Image source={require('../assets/calender.png')} style={{height: 62, width: 62}}/>
 <Image source={require('../assets/light-bulb.png')} style={{height: 62, width: 62}}/> 
 */
+
+//Width Cannot be NULL!
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         borderRadius: 4,
         height: 215,
-        width: null,
         alignItems: 'center',
         justifyContent: 'space-between',
         marginVertical: 23

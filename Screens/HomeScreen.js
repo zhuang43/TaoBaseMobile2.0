@@ -6,25 +6,14 @@ import Swiper from 'react-native-swiper'
 
 import HomeMenuCell from "../Components/HomeMenuCell"
 import FeaturedUserCell from '../Components/FeaturedUserCell';
-import FeedCell from '../Components/FeedCell';
+// import FeedCell from '../Components/FeedCell';
 import ProjectCell from '../Components/ProjectCell'
 import BusinessCell from '../Components/BusinessCell'
 import PremiumCell from '../Components/PremiumCell'
 
-import ProjectListScreen from './ProjectListScreen';
-import BusinessListScreen from './BusinessListScreen'
-import ProfileScreen from './ProfileScreen'
-import UserProfileScreen from './UserProfileScreen'
-import FeedScreen from './FeedScreen'
-import PartnerListScreen from './PartnerListScreen'
-import ProjectDetailScreen from './ProjectDetailScreen'
-import BusinessDetailScreen from './BusinessDetailScreen'
-import FeedDetailScreen from './FeedDetailScreen'
 
 
-class HomeScreen extends Component {
-
-
+export class HomeScreen extends Component {
 
     componentWillMount() {
         this.login();
@@ -65,7 +54,7 @@ class HomeScreen extends Component {
         },
         headerTitleStyle: {
             color: '#fff',
-            fontSize: '18'
+            fontSize: 18
         },
         headerLeft:
             <TouchableOpacity style={{ alignItems: 'center' }} >
@@ -91,10 +80,6 @@ class HomeScreen extends Component {
 
                     <HomeMenuCell navigation={this.props.navigation} />
                     <FeaturedUserCell navigation={this.props.navigation} />
-
-
-
-
 
                     <Text style={{ color: '#777' }}> Projects of the week</Text>
                     <ProjectCell
@@ -128,16 +113,16 @@ class HomeScreen extends Component {
                         businessFollow='824'
                     />
                     <Text style={{ color: '#777' }}> Hot feeds</Text>
-                    <FeedCell
+                    {/* <FeedCell
                         feeder='Jack Ma'
                         feederNote='Richest person in China'
                         feedContent='Ma Yun known professionally as Jack Ma, is a Chinese business magnate, investor, and philanthropist. He is the co-founder and executive chairman of Alibaba Group, a multinational technology conglomerate. As of March 2018, he is one of China'
                         feedReposts='32442'
                         feedComments='421214'
                         feedLikes='89432'
-                    />
+                    /> */}
                     <PremiumCell />
-                    <FeedCell
+                    {/* <FeedCell
                         feeder='Brett Napoli'
                         feederNote='Web Site Mgmt at Ambition Insight'
                         feedContent='This page should appear on the "Home" tab and it will be used *MUCH* more by the users. It is unlikely that they will click into this section, but if it appears on the Home page then they will guarantee to see it, 100% of logins. Which means it will have much more content, much more action, and much more monetization!'
@@ -158,7 +143,7 @@ class HomeScreen extends Component {
                         feedContent='Happy Lunar New Year from our TaoBase Family! We wish you and all your loved ones happiness, health and good fortune in this Year of the Dog: www.TaoBase.com'
                         feedReposts='10k'
                         feedComments='21k'
-                        feedLikes='132k' />
+                        feedLikes='132k' /> */}
                 </Content>
             </Container>
 
@@ -166,19 +151,4 @@ class HomeScreen extends Component {
     }
 }
 
-//Setup Navigatior 
-const HomeNavigator = StackNavigator({
-    HomeScreen: { screen: HomeScreen },
-    ProjectListScreen: { screen: ProjectListScreen },
-    BusinessListScreen: { screen: BusinessListScreen },
-    ProfileScreen: { screen: ProfileScreen },
-    UserProfileScreen: { screen: UserProfileScreen },
-    FeedScreen: { screen: FeedScreen },
-    PartnerListScreen: { screen: PartnerListScreen },
-    ProjectDetailScreen: { screen: ProjectDetailScreen },
-    BusinessDetailScreen: { screen: BusinessDetailScreen },
-    FeedDetailScreen: { screen: FeedDetailScreen }
-})
-
-
-export default HomeNavigator;
+export default HomeScreen;
