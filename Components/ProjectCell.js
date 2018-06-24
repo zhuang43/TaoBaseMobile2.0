@@ -9,12 +9,12 @@ class ProjectCell extends Component {
     render() {
         return (
             <Card style={styles.container}>
-                <TouchableOpacity onPress={()=>this.props.navigation.navigate('ProjectDetailScreen')}>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('ProjectDetailScreen')}>
                     <CardItem>
                         <Left>
                             <Image source={require('../assets/company1.png')} style={{ height: 70, width: 70 }} />
                             <Body>
-                                <Text style={{ fontWeight: 0.62, fontSize: 16, paddingBottom: 3 }}>{this.props.projectName}</Text>
+                                <Text style={{ fontSize: 16, paddingBottom: 3 }}>{this.props.projectName}</Text>
                                 <Text style={{ color: '#222', paddingRight: 0, fontSize: 13, paddingBottom: 3 }}>{this.props.projectNote}</Text>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', opacity: 0.7, paddingTop: 5 }}>
                                     <Image source={require('../assets/map-pin.png')} style={{ height: 13, width: 11 }} />
@@ -33,7 +33,7 @@ class ProjectCell extends Component {
                     <View style={{ paddingLeft: Dimensions.get('window').width / 11 }}>
                         <TouchableOpacity style={{ justifyContent: 'flex-start', opacity: 0.8 }}>
                             <Left>
-                                <Text style={{ fontWeight: 0.4 }}>Hotness</Text>
+                                <Text>Hotness</Text>
                                 <Text style={{ paddingLeft: 5 }}>{this.props.projectHotness}</Text>
                             </Left>
                         </TouchableOpacity>
@@ -41,7 +41,7 @@ class ProjectCell extends Component {
                     <View style={{ paddingRight: Dimensions.get('window').width / 11 }}>
                         <TouchableOpacity style={{ justifyContent: 'flex-start', opacity: 0.8 }}>
                             <Left>
-                                <Text style={{ fontWeight: 0.4 }}>Follow</Text>
+                                <Text>Follow</Text>
                                 <Text style={{ paddingLeft: 5 }}>{this.props.projectFollow}</Text>
                             </Left>
                         </TouchableOpacity>
@@ -56,8 +56,7 @@ class ProjectCell extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 10,
-        borderRadius: 4,
-        width: null,
+        borderRadius: 4
     },
     likeBar: {
         justifyContent: 'space-between',

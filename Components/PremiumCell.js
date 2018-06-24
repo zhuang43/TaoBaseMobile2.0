@@ -7,10 +7,10 @@ class PremiumCell extends Component {
 
     render() {
         return (
-            
-            <Card style={{ flexDirection: 'column', justifyContent: 'space-between'}}>
-                <CardItem style={{ felx: 1}}>
-                    <TouchableOpacity ><Text style={{fontWeight:0.56, color: '#EEAA2C', fontSize: '16'}}>Premiums</Text></TouchableOpacity>
+
+            <Card style={{ flexDirection: 'column', justifyContent: 'space-between' }}>
+                <CardItem style={{ flex: 1 }}>
+                    <TouchableOpacity ><Text style={{ color: '#EEAA2C', fontSize: 16 }}>Premiums</Text></TouchableOpacity>
                     <Text> have free business referral services!</Text>
                 </CardItem>
             </Card>
@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
         flex: 1,
         borderRadius: 4,
         height: 215,
-        width: null,
         alignItems: 'center',
         justifyContent: 'space-between',
         marginVertical: 23

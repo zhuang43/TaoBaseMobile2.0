@@ -14,7 +14,7 @@ class BusinessDetailScreen extends Component {
         },
         headerTitleStyle: {
             color: '#fff',
-            fontSize: '18'
+            fontSize: 18
         },
         headerRight:
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -42,7 +42,7 @@ class BusinessDetailScreen extends Component {
                             <Text style={{ top: 5, fontWeight: 0.4, fontSize: 18 }}>Spain Tech Center</Text>
                             <Text style={{ top: 5, fontWeight: 0.23, fontSize: 14, textAlign: 'center', height: 40, opacity: 0.9 }}>Specializing in WordPress Website Development, WordPress Consulting, WordPress Training, Social Media Training, Graphic Design, SEO, SEM and much more.</Text>
                             <View style={{ flexDirection: 'row', paddingHorizontal: 10, flexWrap: 'wrap', justifyContent: 'center' }}>
-                              
+
 
                             </View>
                             <View style={{ flexDirection: 'row', justifyContent: 'center', paddingTop: 8, paddingBottom: 10 }}>
@@ -50,7 +50,6 @@ class BusinessDetailScreen extends Component {
                                     <TouchableOpacity style={{ borderColor: '#E14437', borderWidth: 1, borderRadius: 3, width: 80, alignItems: 'center', paddingVertical: 3, right: 5 }}>
                                         <Text style={{ color: '#E14437', fontWeight: 0.4, fontSize: 13 }}>Follow</Text>
                                     </TouchableOpacity>
-                                    >
                                     <TouchableOpacity style={{ borderColor: '#E14437', borderWidth: 1, borderRadius: 3, width: 80, alignItems: 'center', paddingVertical: 3 }}>
                                         <Text style={{ color: '#E14437', fontWeight: 0.4, fontSize: 13 }}>Message</Text>
                                     </TouchableOpacity>
@@ -107,7 +106,7 @@ class BusinessDetailScreen extends Component {
                         </List>
                     </Card>
 
-  
+
 
 
                     <Card style={{ backgroundColor: '#fff', borderTopColor: '#eee', borderTopWidth: 1 }}>
