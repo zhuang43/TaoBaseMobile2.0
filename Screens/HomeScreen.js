@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Button, TouchableOpacity, Dimensions, Image, ImageBackground } from 'react-native';
-import { Container, Content } from 'native-base'
-import { StackNavigator } from 'react-navigation';
+import { Container, Content, Header } from 'native-base'
 import Swiper from 'react-native-swiper'
 
 import HomeMenuCell from "../Components/HomeMenuCell"
@@ -48,36 +47,35 @@ export class HomeScreen extends Component {
             )
     }
 
-    static navigationOptions = ({ navigation }) => ({
-        headerStyle: {
-            backgroundColor: '#E14437',
-        },
-        headerTitleStyle: {
-            color: '#fff',
-            fontSize: 18
-        },
-        headerLeft:
-            <TouchableOpacity style={{ alignItems: 'center' }} >
-                <View style={{ backgroundColor: '#fff', left: 10, paddingVertical: 5, width: Dimensions.get('window').width - 60 }}>
-                    <Text style={{ color: '#777' }}>  Search</Text>
-                </View>
-            </TouchableOpacity>,
-        headerRight:
-            <TouchableOpacity
-                style={{ width: 28, height: 28, right: 10, alignItems: 'center' }}
-                onPress={() => navigation.navigate('ProfileScreen')}
-            >
-                <Image source={require('../assets/alice.png')} style={{ height: 28, width: 28, borderWidth: 1, borderColor: '#fff', borderRadius: 14 }} />>
-            </TouchableOpacity>
+    // static navigationOptions = {
+    //     title: "Home"
+    //     // headerStyle: {
+    //     //     backgroundColor: '#E14437',
+    //     // },
+    //     // headerTitleStyle: {
+    //     //     color: '#fff',
+    //     //     fontSize: 18
+    //     // },
+    //     // headerLeft:
+    //     //     <TouchableOpacity style={{ alignItems: 'center' }} >
+    //     //         <View style={{ backgroundColor: '#fff', left: 10, paddingVertical: 5, width: Dimensions.get('window').width - 60 }}>
+    //     //             <Text style={{ color: '#777' }}>  Search</Text>
+    //     //         </View>
+    //     //     </TouchableOpacity>,
+    //     // headerRight:
+    //     //     <TouchableOpacity
+    //     //         style={{ width: 28, height: 28, right: 10, alignItems: 'center' }}
+    //     //         onPress={() => navigation.navigate('ProfileScreen')}
+    //     //     >
+    //     //         <Image source={require('../assets/alice.png')} style={{ height: 28, width: 28, borderWidth: 1, borderColor: '#fff', borderRadius: 14 }} />>
+    //     //     </TouchableOpacity>
 
-    })
+    // }
 
     render() {
         return (
-
             <Container>
                 <Content>
-
                     <HomeMenuCell navigation={this.props.navigation} />
                     <FeaturedUserCell navigation={this.props.navigation} />
 
