@@ -1,45 +1,48 @@
-import React from 'react';
-import { Container, Header, Content, Form, Item, Input, Label, Text } from 'native-base';
-import { Button, TextInput } from 'react-native';
-import { View } from 'react-native';
-import { Font, AppLoading } from 'expo';
-import { login } from '../store/actions/authendication';
-import { connect } from 'react-redux';
+import React from 'react'
+import { Container, Form, Item, Label, Text } from 'native-base'
+import { Button, TextInput } from 'react-native'
+import { View } from 'react-native'
+import { Font } from 'expo'
+import { connect } from 'react-redux'
+import { login } from '../store/actions/authendication'
 
 export class Login extends React.Component {
 	constructor(props) {
-		super(props);
-		this.state = { loading: true };
-		this.username = null;
-		this.password = null;
+		super(props)
+		this.state = { loading: true }
+		this.username = null
+		this.password = null
 	}
 
-	async componentDidMount() {
-		await Font.loadAsync({
+	componentDidMount() {
+		Font.loadAsync({
 			Roboto: require('native-base/Fonts/Roboto.ttf'),
-			Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
-		});
-		this.setState({ loading: false });
+			Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf')
+		}).then(() => this.setState({ loading: false }))
 	}
+
 	componentDidUpdate({ isLogin: prevIsLogin }) {
-		const { isLogin, navigation } = this.props;
+		const { isLogin, navigation } = this.props
 		if (!prevIsLogin && isLogin) {
-			navigation.navigate('MainTabNavigator');
+			navigation.navigate('MainTabNavigator')
 		}
 	}
-	handleLogin = () => {
-		const { dispatch, navigation } = this.props;
 
-		dispatch(login({ username: this.username, password: this.password }));
-	};
+	handleLogin = () => {
+		const { dispatch } = this.props
+
+		dispatch(login({ username: this.username, password: this.password }))
+	}
 
 	render() {
-		if (this.state.loading) return <View />;
+		if (this.state.loading) return <View />
 		return (
 			<Container style={styles.container}>
 				{this.props.errorMessage && (
 					<View style={styles.error}>
-						<Text style={styles.errorText}>{this.props.errorMessage.message}</Text>
+						<Text style={styles.errorText}>
+							{this.props.errorMessage.message}
+						</Text>
 					</View>
 				)}
 
@@ -57,7 +60,7 @@ export class Login extends React.Component {
 						<TextInput
 							onChangeText={value => (this.password = value)}
 							underlineColorAndroid="transparent"
-							secureTextEntry={true}
+							secureTextEntry
 							style={styles.input}
 						/>
 					</Item>
@@ -69,31 +72,29 @@ export class Login extends React.Component {
 					/>
 				</Form>
 			</Container>
-		);
+		)
 	}
 }
-const mapStateToProps = state => {
-	return {
-		isLogin: state.userReducer.isLogin,
-		errorMessage: state.userReducer.errorMessage,
-	};
-};
+const mapStateToProps = state => ({
+	isLogin: state.userReducer.isLogin,
+	errorMessage: state.userReducer.errorMessage
+})
 
-export default connect(mapStateToProps)(Login);
+export default connect(mapStateToProps)(Login)
 
 const styles = {
 	container: {
-		marginTop: 50,
+		marginTop: 50
 	},
 	error: {
-		minHeight: 20,
+		minHeight: 20
 	},
 	errorText: {
 		color: 'red',
-		padding: 10,
+		padding: 10
 	},
 	input: {
 		minWidth: 200,
-		padding: 10,
-	},
-};
+		padding: 10
+	}
+}
