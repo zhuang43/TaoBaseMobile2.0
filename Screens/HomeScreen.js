@@ -5,7 +5,7 @@ import Swiper from 'react-native-swiper'
 
 import HomeMenuCell from "../Components/HomeMenuCell"
 import FeaturedUserCell from '../Components/FeaturedUserCell';
-// import FeedCell from '../Components/FeedCell';
+import FeedCell from '../Components/FeedCell';
 import ProjectCell from '../Components/ProjectCell'
 import BusinessCell from '../Components/BusinessCell'
 import PremiumCell from '../Components/PremiumCell'
@@ -47,34 +47,49 @@ export class HomeScreen extends Component {
             )
     }
 
-    // static navigationOptions = {
-    //     title: "Home"
-    //     // headerStyle: {
-    //     //     backgroundColor: '#E14437',
-    //     // },
-    //     // headerTitleStyle: {
-    //     //     color: '#fff',
-    //     //     fontSize: 18
-    //     // },
-    //     // headerLeft:
-    //     //     <TouchableOpacity style={{ alignItems: 'center' }} >
-    //     //         <View style={{ backgroundColor: '#fff', left: 10, paddingVertical: 5, width: Dimensions.get('window').width - 60 }}>
-    //     //             <Text style={{ color: '#777' }}>  Search</Text>
-    //     //         </View>
-    //     //     </TouchableOpacity>,
-    //     // headerRight:
-    //     //     <TouchableOpacity
-    //     //         style={{ width: 28, height: 28, right: 10, alignItems: 'center' }}
-    //     //         onPress={() => navigation.navigate('ProfileScreen')}
-    //     //     >
-    //     //         <Image source={require('../assets/alice.png')} style={{ height: 28, width: 28, borderWidth: 1, borderColor: '#fff', borderRadius: 14 }} />>
-    //     //     </TouchableOpacity>
+    static navigationOptions = () => {
+        return {
+            header: () => null
+        }
+    }
 
-    // }
+    // headerStyle: {
+    //     backgroundColor: '#E14437',
+    // },
+    // headerTitleStyle: {
+    //     color: '#fff',
+    //     fontSize: 18
+    // },
+    // headerLeft:
+    //     <TouchableOpacity style={{ alignItems: 'center' }} >
+    //         <View style={{ backgroundColor: '#fff', left: 10, paddingVertical: 5, width: Dimensions.get('window').width - 60 }}>
+    //             <Text style={{ color: '#777' }}>  Search</Text>
+    //         </View>
+    //     </TouchableOpacity>,
+    // headerRight:
+    // <TouchableOpacity
+    //     style={{ width: 28, height: 28, right: 10, alignItems: 'center' }}
+    //     onPress={() => navigation.navigate('ProfileScreen')}
+    // >
+    //     <Image source={require('../assets/alice.png')} style={{ height: 28, width: 28, borderWidth: 1, borderColor: '#fff', borderRadius: 14 }} />>
+    // </TouchableOpacity>
 
     render() {
         return (
             <Container>
+                <Header style={styles.header}>
+                    <TouchableOpacity style={{ alignItems: 'center' }} >
+                        <View style={{ backgroundColor: '#fff', padding: 8, borderRadius: 2, width: Dimensions.get('window').width - 80 }}>
+                            <Text style={{ color: '#777' }}>  Search</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        style={{ width: 28, height: 28, alignItems: 'center' }}
+                        onPress={() => navigation.navigate('ProfileScreen')}
+                    >
+                        <Image source={require('../assets/alice.png')} style={{ height: 28, width: 28, borderWidth: 1, borderColor: '#fff', borderRadius: 14 }} />
+                    </TouchableOpacity>
+                </Header>
                 <Content>
                     <HomeMenuCell navigation={this.props.navigation} />
                     <FeaturedUserCell navigation={this.props.navigation} />
@@ -111,14 +126,14 @@ export class HomeScreen extends Component {
                         businessFollow='824'
                     />
                     <Text style={{ color: '#777' }}> Hot feeds</Text>
-                    {/* <FeedCell
+                    <FeedCell
                         feeder='Jack Ma'
                         feederNote='Richest person in China'
                         feedContent='Ma Yun known professionally as Jack Ma, is a Chinese business magnate, investor, and philanthropist. He is the co-founder and executive chairman of Alibaba Group, a multinational technology conglomerate. As of March 2018, he is one of China'
                         feedReposts='32442'
                         feedComments='421214'
                         feedLikes='89432'
-                    /> */}
+                    />
                     <PremiumCell />
                     {/* <FeedCell
                         feeder='Brett Napoli'
@@ -148,5 +163,14 @@ export class HomeScreen extends Component {
         );
     }
 }
+
+const styles = StyleSheet.create({
+    header: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        backgroundColor: '#E14437'
+    }
+})
 
 export default HomeScreen;

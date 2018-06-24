@@ -3,6 +3,7 @@ import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
 import LoginScreen from '../Screens/LoginScreen'
 import HomeScreen from '../Screens/HomeScreen'
 import TestScreen from '../Screens/TestScreen'
+import Icon from 'react-native-vector-icons/FontAwesome';
 // import ProjectListScreen from './ProjectListScreen';
 // import BusinessListScreen from './BusinessListScreen'
 // import ProfileScreen from './ProfileScreen'
@@ -25,32 +26,50 @@ const HomeNavigator = StackNavigator({
     // ProjectDetailScreen: { screen: ProjectDetailScreen },
     // BusinessDetailScreen: { screen: BusinessDetailScreen },
     // FeedDetailScreen: { screen: FeedDetailScreen }
-})
+}
+)
 
+const HomeStackRender = () => {
+    return (
+        <HomeNavigator />
+    )
+}
 
 
 const MainTabNavigator = TabNavigator(
     {
         HomeScreen: {
-            screen: HomeScreen,
+            screen: HomeStackRender,
             navigationOptions: ({ navigation }) => ({
                 title: "Home",
-                tabBarIcon: () => (
-                    <Image
-                        source={require('../assets/home.png')}
-                        style={{ width: 24, height: 24 }}
-                    />
-                )
-
+                tabBarIcon: () => <Icon color="white" name="home" size={20} />,
+                showIcon: true
             })
         },
-        TestScreen: { screen: TestScreen },
+        TestScreen: {
+            screen: TestScreen,
+            navigationOptions: ({ navigation }) => ({
+                title: "Test",
+                tabBarIcon: () => <Icon color="white" name="home" size={20} />,
+                showIcon: true
+            })
+        },
     },
     {
         animationEnabled: true,
         swipeEnabled: true,
-        tabBarPosition: 'bottom'
-    }
+        tabBarPosition: 'bottom',
+        tabBarOptions: {
+            showIcon: true,
+            labelStyle: {
+                margin: 2,
+                fontSize: 10
+            }
+
+        }
+
+    },
+
 )
 
 const MainScreen = (props) => {
