@@ -21,9 +21,9 @@ export class Login extends React.Component {
 		}).then(() => this.setState({ loading: false }))
 	}
 
-	componentDidUpdate({ isLogin: prevIsLogin }) {
+	componentDidUpdate() {
 		const { isLogin, navigation } = this.props
-		if (!prevIsLogin && isLogin) {
+		if (isLogin) {
 			navigation.navigate('MainTabNavigator')
 		}
 	}
