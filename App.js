@@ -4,6 +4,8 @@ import { StackNavigator, TabNavigator } from 'react-navigation';
 
 import HomeScreen from './Screens/HomeScreen'
 import TestScreen from './Screens/TestScreen'
+import ProjectScreen from './Screens/ProjectListScreen'
+import MessagesScreen from './Screens/MessagesScreen'
 
 export default class App extends React.Component {
   render() {
@@ -21,15 +23,26 @@ const MainTabNavigator = TabNavigator({
       tabBarIcon: () => (
         <Image
           source={require('./assets/home.png')}
-          style={{width:24, height:24}}
+          style={{width:20, height:22, tintColor: 'black'}}
         />
       )
     })},
-  TestScreen : {screen : TestScreen},
+  MessagesScreen : {screen : MessagesScreen,
+    navigationOptions: ({ navigation }) => ({
+      title: "Messages",
+      tabBarIcon: () => (
+        <Image
+          source={require('./assets/message.png')}
+          style={{width:24, height:20, tintColor: 'black'}}
+        />
+      )
+    })
+  },
   },
   {
     animationEnabled: true,
     swipeEnabled: true
+    
   })
 
 

@@ -52,8 +52,6 @@ class BusinessCell extends Component {
                         </Left>
                     </CardItem>
                 </TouchableOpacity>
-
-                <CommentCell/>
             </Card>
         );
     }
